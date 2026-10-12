@@ -1,0 +1,204 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SS CLUB!</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eaf4ff, #fff0df);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #183153;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 430px;
+            padding: 40px 30px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(24, 49, 83, 0.15);
+            border-top: 7px solid #ff8c32;
+        }
+
+        .club-icon {
+            background-color: #e5f1ff;
+            color: #1769aa;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 18px;
+            font-size: 30px;
+            font-weight: bold;
+            border: 3px solid #ff9b42;
+        }
+
+        h1 {
+            color: #1559a6;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 17px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #24476b;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 13px 15px;
+            border: 2px solid #d5e5f7;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2478c8;
+            box-shadow: 0 0 0 3px rgba(36, 120, 200, 0.12);
+        }
+
+        input[type="text"]::placeholder {
+            color: #a0aec0;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #1769aa, #2586d8);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background: linear-gradient(90deg, #ff812b, #ff9f43);
+            transform: translateY(-2px);
+        }
+
+        #result {
+            margin-top: 24px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f1f7ff;
+            border-left: 4px solid #ff9238;
+            color: #24476b;
+            text-align: left;
+            overflow-wrap: anywhere;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #8a9bb0;
+            font-size: 12px;
+        }
+
+        .footer span {
+            color: #ff8c32;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 22px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="club-icon">SS</div>
+
+        <h1>SS CLUB!</h1>
+
+        <p class="subtitle">
+            Welcome to the club!<br>
+            Enter your name below to find a member.
+        </p>
+
+        <form onsubmit="return false;">
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input
+                    type="text"
+                    id="last_name"
+                    placeholder="Enter last name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input
+                    type="text"
+                    id="first_name"
+                    placeholder="Enter first name"
+                >
+            </div>
+
+            <input
+                type="button"
+                py-click="name_finders"
+                value="Search Member"
+            >
+        </form>
+
+        <div id="result"></div>
+
+        <p class="footer">
+            Made with <span>♥</span> for SS CLUB
+        </p>
+
+    </div>
+
+    <py-script src="main.py"></py-script>
+</body>
+</html>
+```
